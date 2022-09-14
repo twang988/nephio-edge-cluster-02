@@ -1,17 +1,19 @@
 apiVersion: "k8s.cni.cncf.io/v1"
 kind: NetworkAttachmentDefinition
-metadata: # kpt-merge: /host-device-veth21
+metadata: # kpt-merge: example/host-device-veth21
   name: host-device-veth21
+  namespace: example
   annotations:
-    internal.kpt.dev/upstream-identifier: 'k8s.cni.cncf.io|NetworkAttachmentDefinition|default|host-device-veth21'
+    internal.kpt.dev/upstream-identifier: 'k8s.cni.cncf.io|NetworkAttachmentDefinition|example|host-device-veth21'
 spec:
   config: '{ "cniVersion": "0.3.0", "type": "host-device", "device": "veth21" }'
 ---
 apiVersion: "k8s.cni.cncf.io/v1"
 kind: NetworkAttachmentDefinition
-metadata: # kpt-merge: /host-device-veth22
+metadata: # kpt-merge: example/host-device-veth22
   name: host-device-veth22
+  namespace: example
   annotations:
-    internal.kpt.dev/upstream-identifier: 'k8s.cni.cncf.io|NetworkAttachmentDefinition|default|host-device-veth22'
+    internal.kpt.dev/upstream-identifier: 'k8s.cni.cncf.io|NetworkAttachmentDefinition|example|host-device-veth22'
 spec:
   config: '{ "cniVersion": "0.3.0", "type": "host-device", "device": "veth22" }'

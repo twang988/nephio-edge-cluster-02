@@ -16,7 +16,7 @@ upstreamLock:
     repo: https://github.com/twang988/nephio-blueprint.git
     directory: firewall-host-netdevice
     ref: main
-    commit: 45fe7f10c1ac42e1742c2f823dd1bfeae81ef498
+    commit: 2430c338606d5022e19463225ffcc05f37c9d392
 info:
   description: firewall-host-netdevice
 pipeline:
