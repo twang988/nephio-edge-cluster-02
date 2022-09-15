@@ -8,15 +8,15 @@ upstream:
   type: git
   git:
     repo: https://github.com/twang988/nephio-blueprint.git
-    directory: firewall-host-netdevice/deployment
+    directory: firewall-host-netdevice/cfw
     ref: main
 upstreamLock:
   type: git
   git:
     repo: https://github.com/twang988/nephio-blueprint.git
-    directory: firewall-host-netdevice/deployment
+    directory: firewall-host-netdevice/cfw
     ref: main
-    commit: a1eba61b6ec7ae4c746a37b42a45897b05b0f226
+    commit: eab515d986cb977a428c9b660e423f866734f17b
 info:
   description: firewall-host-netdevice
 pipeline:
