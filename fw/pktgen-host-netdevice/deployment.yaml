@@ -8,6 +8,7 @@ metadata: # kpt-merge: /firewall-host-netdevice-pktgen-host-netdevice
     chart: pktgen-host-netdevice
   annotations:
     internal.kpt.dev/upstream-identifier: 'apps|Deployment|default|firewall-host-netdevice-pktgen-host-netdevice'
+  namespace: fw
 spec:
   replicas: 1
   selector:
