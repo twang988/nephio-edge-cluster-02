@@ -1,0 +1,25 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata: # kpt-merge: /vfw-pktgen
+  name: vfw-pktgen
+  annotations:
+    internal.kpt.dev/upstream-identifier: 'kpt.dev|Kptfile|default|vfw-pktgen'
+upstream:
+  type: git
+  git:
+    repo: https://github.com/twang988/nephio-blueprint.git
+    directory: firewall-host-netdevice/pktgen-host-netdevice
+    ref: main
+upstreamLock:
+  type: git
+  git:
+    repo: https://github.com/twang988/nephio-blueprint.git
+    directory: firewall-host-netdevice/pktgen-host-netdevice
+    ref: main
+    commit: 4731da2f04983ab8784a662f5d23a2c7f37c26b0
+info:
+  description: firewall-host-netdevice-pktgen
+pipeline:
+  mutators:
+  - image: gcr.io/kpt-fn/set-namespace:v0.4.1
+    configPath: ns.yaml
