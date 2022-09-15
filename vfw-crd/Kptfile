@@ -16,7 +16,7 @@ upstreamLock:
     repo: https://github.com/twang988/nephio-blueprint.git
     directory: firewall-host-netdevice/hostdev-network-crd
     ref: main
-    commit: a1eba61b6ec7ae4c746a37b42a45897b05b0f226
+    commit: 4cd649fd93b208143172fab56819718545ce8352
 info:
   description: hostdev-network-crd
 pipeline:
