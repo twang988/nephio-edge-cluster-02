@@ -16,10 +16,10 @@ upstreamLock:
     repo: https://github.com/twang988/nephio-blueprint.git
     directory: firewall-host-netdevice/deployment
     ref: main
-    commit: c1b2aea7c8f49ef258a3e065881de6d3a27718b3
+    commit: 1f3092536232cdc72e084a7664f99101b2bcb9a4
 info:
   description: firewall-host-netdevice
 pipeline:
   mutators:
   - image: gcr.io/kpt-fn/set-namespace:v0.4.1
-    configPath: package-context.yaml
+    configPath: ns.yaml
