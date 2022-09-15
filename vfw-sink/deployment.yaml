@@ -8,6 +8,7 @@ metadata: # kpt-merge: /firewall-host-netdevice-sink-host-netdevice
     release: firewall-host-netdevice
   annotations:
     internal.kpt.dev/upstream-identifier: 'apps|Deployment|default|firewall-host-netdevice-sink-host-netdevice'
+  namespace: vfw
 spec:
   replicas: 1
   selector:
