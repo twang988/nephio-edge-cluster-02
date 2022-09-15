@@ -1,32 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata: # kpt-merge: /firewall-host-netdevice-pktgen-host-netdevice
-  name: firewall-host-netdevice-pktgen-host-netdevice
+metadata: # kpt-merge: /firewall-host-netdevice
+  name: firewall-host-netdevice
   labels:
     release: firewall-host-netdevice
-    app: pktgen-host-netdevice
-    chart: pktgen-host-netdevice
+    app: firewall-host-netdevice
+    chart: firewall-host-netdevice
   annotations:
-    internal.kpt.dev/upstream-identifier: 'apps|Deployment|default|firewall-host-netdevice-pktgen-host-netdevice'
-  namespace: fw
+    internal.kpt.dev/upstream-identifier: 'apps|Deployment|default|firewall-host-netdevice'
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: pktgen-host-netdevice
+      app: firewall-host-netdevice
       release: firewall-host-netdevice
   template:
     metadata:
       labels:
-        app: pktgen-host-netdevice
+        app: firewall-host-netdevice
         release: firewall-host-netdevice
       annotations:
-        k8s.v1.cni.cncf.io/networks: '[ { "name": "host-device-veth11", "interface": "veth11" } ]'
+        k8s.v1.cni.cncf.io/networks: '[ { "name": "host-device-veth12", "interface": "veth12" }, { "name": "host-device-veth21", "interface": "veth21" } ]'
     spec:
       nodeSelector:
         kubernetes.io/hostname: "controller-0"
       containers:
-      - name: pktgen-host-netdevice
+      - name: firewall-host-netdevice
         image: ubuntu:18.04
         imagePullPolicy: IfNotPresent
         tty: true
@@ -44,7 +43,7 @@ spec:
           value: "10.12.7.4"
         - name: dcaeCollectorPort
           value: "30235"
-        command: ["/bin/bash", "/opt/vpg_start.sh"]
+        command: ["/bin/bash", "/opt/vfw_start.sh"]
         securityContext:
           privileged: true
           capabilities:
@@ -61,11 +60,11 @@ spec:
           mountPath: /opt
         resources:
           requests:
-            cpu: "3"
+            cpu: 3
             memory: 4Gi
             hugepages-2Mi: 256Mi
           limits:
-            cpu: "3"
+            cpu: 3
             memory: 4Gi
             hugepages-2Mi: 256Mi
       volumes:
@@ -80,6 +79,6 @@ spec:
           path: /usr/src
       - name: scripts
         configMap:
-          name: pktgen-host-netdevice-scripts-configmap
+          name: firewall-host-netdevice-scripts-configmap
       imagePullSecrets:
       - name: admin-registry-secret
