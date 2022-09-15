@@ -1,0 +1,8 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata: # kpt-merge: /firewall-host-netdevice-sink
+  name: firewall-host-netdevice-sink
+  annotations:
+    internal.kpt.dev/upstream-identifier: 'kpt.dev|Kptfile|default|firewall-host-netdevice-sink'
+info:
+  description: firewall-host-netdevice-sink
