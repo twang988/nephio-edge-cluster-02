@@ -8,7 +8,6 @@ metadata: # kpt-merge: /packetgen-service
     release: firewall-host-netdevice
   annotations:
     internal.kpt.dev/upstream-identifier: '|Service|default|packetgen-service'
-  namespace: fw
 spec:
   type: NodePort
   ports:
