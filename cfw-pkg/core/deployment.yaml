@@ -22,7 +22,7 @@ spec:
         app: firewall-host-netdevice
         release: firewall-host-netdevice
       annotations:
-        k8s.v1.cni.cncf.io/networks: '[ { "name": "host-device-veth12", "interface": "veth12" }, { "name": "host-device-veth21", "interface": "veth21" } ]'
+        k8s.v1.cni.cncf.io/networks: '[{"interface":"veth12","name":"host-device-veth12"},{"interface":"veth21","name":"host-device-veth21"}]'
     spec:
       nodeSelector:
         kubernetes.io/hostname: "controller-0"
