@@ -1,0 +1,9 @@
+apiVersion: k8s.cni.cncf.io/v1
+kind: NetworkAttachmentDefinition
+metadata:
+  name: host-device-veth21
+  namespace: vfw
+  annotations:
+    networkname: protectednet
+spec:
+  config: '{"cniVersion":"0.3.0","device":"veth21","type":"host-device"}'
