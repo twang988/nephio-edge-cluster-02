@@ -1,0 +1,27 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata: # kpt-merge: /cfw-deploy
+  name: cfw-deploy
+  annotations:
+    internal.kpt.dev/upstream-identifier: 'kpt.dev|Kptfile|default|cfw-deploy'
+upstream:
+  type: git
+  git:
+    repo: https://github.com/twang988/nephio-blueprint.git
+    directory: cfw-func-test-pkg
+    ref: main
+upstreamLock:
+  type: git
+  git:
+    repo: https://github.com/twang988/nephio-blueprint.git
+    directory: cfw-func-test-pkg
+    ref: main
+    commit: 35f9c3b57c212cb7175294222c061d68aceada65
+info:
+  description: firewall-host-netdevice
+pipeline:
+  mutators:
+  - image: docker.io/wang5150753/cfirewall-func:1.0
+    configPath: func-cfg-local.yaml
+  - image: gcr.io/kpt-fn/set-namespace:v0.4.1
+    configPath: ns.yaml
