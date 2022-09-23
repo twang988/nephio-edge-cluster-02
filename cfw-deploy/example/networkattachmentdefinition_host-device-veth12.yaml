@@ -1,9 +1,0 @@
-apiVersion: k8s.cni.cncf.io/v1
-kind: NetworkAttachmentDefinition
-metadata:
-  name: host-device-veth12
-  namespace: vfw
-  annotations:
-    networkname: unprotectednet
-spec:
-  config: '{"cniVersion":"0.3.0","device":"veth12","type":"host-device"}'
