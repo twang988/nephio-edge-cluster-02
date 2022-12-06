@@ -75,11 +75,11 @@ data:
         ready
         prometheus :9153
         forward . /etc/resolv.conf {
-          max_concurrent 1000
+          max_concurrent 2000
         }
         cache 300 {
-          success 2048
-          denial 2048
+          success 4096
+          denial 4096
           prefetch 100
           serve_stale
         }
